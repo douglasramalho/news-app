@@ -1,4 +1,6 @@
 package br.com.douglasmotta.hiltdependencyinjection.data.repository
 
-class NewsDbDataSource {
+import javax.inject.Inject
+
+class NewsDbDataSource @Inject constructor() {
 }

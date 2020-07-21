@@ -3,8 +3,9 @@ package br.com.douglasmotta.hiltdependencyinjection.data.repository
 import br.com.douglasmotta.hiltdependencyinjection.data.NewsApiClient
 import br.com.douglasmotta.hiltdependencyinjection.data.model.NewsResult
 import com.haroldadmin.cnradapter.NetworkResponse
+import javax.inject.Inject
 
-class NewsApiDataSource(
+class NewsApiDataSource @Inject constructor(
     private val newsApiClient: NewsApiClient
 ) {
 

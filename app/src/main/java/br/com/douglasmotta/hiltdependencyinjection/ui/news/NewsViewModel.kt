@@ -8,8 +8,9 @@ import br.com.douglasmotta.hiltdependencyinjection.data.model.Article
 import br.com.douglasmotta.hiltdependencyinjection.data.model.NewsResult
 import br.com.douglasmotta.hiltdependencyinjection.data.repository.NewsRepositoryInterface
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class NewsViewModel(
+class NewsViewModel @Inject constructor(
     private val newsRepository: NewsRepositoryInterface
 ) : ViewModel() {
 

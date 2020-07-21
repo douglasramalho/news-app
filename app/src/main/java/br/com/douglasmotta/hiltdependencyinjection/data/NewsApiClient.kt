@@ -1,5 +1,6 @@
 package br.com.douglasmotta.hiltdependencyinjection.data
 
+import br.com.douglasmotta.hiltdependencyinjection.BuildConfig
 import br.com.douglasmotta.hiltdependencyinjection.data.model.ErrorResponse
 import br.com.douglasmotta.hiltdependencyinjection.data.model.NewsResponse
 import com.haroldadmin.cnradapter.NetworkResponse
@@ -11,6 +12,6 @@ interface NewsApiClient {
     @GET("top-headlines?country=br")
     suspend fun getNews(
         @Query("category") category: String = "technology",
-        @Query("apiKey") apiKey: String = "0a0bfb59fa05442983eea798d8f34e55"
+        @Query("apiKey") apiKey: String = BuildConfig.NEWS_API_KEY
     ): NetworkResponse<NewsResponse, ErrorResponse>
 }

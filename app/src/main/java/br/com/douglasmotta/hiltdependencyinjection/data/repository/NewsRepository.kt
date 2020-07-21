@@ -1,7 +1,6 @@
 package br.com.douglasmotta.hiltdependencyinjection.data.repository
 
 import android.content.Context
-import br.com.douglasmotta.hiltdependencyinjection.data.model.Article
 import br.com.douglasmotta.hiltdependencyinjection.data.model.NewsResult
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject

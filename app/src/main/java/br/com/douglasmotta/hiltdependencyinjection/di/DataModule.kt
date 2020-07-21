@@ -1,7 +1,6 @@
 package br.com.douglasmotta.hiltdependencyinjection.di
 
-import br.com.douglasmotta.hiltdependencyinjection.data.repository.NewsRepository
-import br.com.douglasmotta.hiltdependencyinjection.data.repository.NewsRepositoryInterface
+import br.com.douglasmotta.hiltdependencyinjection.data.repository.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -17,4 +16,10 @@ abstract class DataModule {
     abstract fun bindNewsRepository(
         newsRepository: NewsRepository
     ): NewsRepositoryInterface
+
+    @Singleton
+    @Binds
+    abstract fun bindApiDataSource(
+        apiDataSource: NewsFANApiDataSource
+    ): NewsApiDataSource
 }

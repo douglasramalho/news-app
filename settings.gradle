@@ -1,2 +1,2 @@
-rootProject.name='Kotlin Coroutines Example'
+rootProject.name='Hilt - Dependency Injection'
 include ':app'

@@ -8,8 +8,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import br.com.douglasmotta.hiltdependencyinjection.R
-import br.com.douglasmotta.hiltdependencyinjection.data.WebApiAccess
-import br.com.douglasmotta.hiltdependencyinjection.data.repository.NewsApiDataSource
+import br.com.douglasmotta.hiltdependencyinjection.data.repository.NewsFANApiDataSource
 import br.com.douglasmotta.hiltdependencyinjection.data.repository.NewsDbDataSource
 import br.com.douglasmotta.hiltdependencyinjection.data.repository.NewsRepository
 import kotlinx.android.synthetic.main.main_fragment.*
@@ -20,9 +19,10 @@ class NewsFragment : Fragment(R.layout.main_fragment) {
         object : ViewModelProvider.Factory {
             override fun <T : ViewModel?> create(modelClass: Class<T>): T {
                 val newsDbDataSource = NewsDbDataSource()
-                val newsApiDataString = NewsApiDataSource(WebApiAccess.newsApi)
+                //val newsApiDataSource = NewsApiDataSource(WebApiAccess.newsApi)
+                val newsApiDataSource = NewsFANApiDataSource()
                 val newsRepository =
-                    NewsRepository(requireContext(), newsDbDataSource, newsApiDataString)
+                    NewsRepository(requireContext(), newsDbDataSource, newsApiDataSource)
 
                 return NewsViewModel(newsRepository) as T
             }
